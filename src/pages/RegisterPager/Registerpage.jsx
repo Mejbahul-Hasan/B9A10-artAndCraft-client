@@ -45,7 +45,7 @@ const RegisterPage = () => {
                         console.log(result.user);
                         setRegisterSuccess(toast.success("Registration Successful !"));
                         e.target.reset();
-                        window.location.reload();
+                        // window.location.reload();
                     })
             })
             .catch(error => {
