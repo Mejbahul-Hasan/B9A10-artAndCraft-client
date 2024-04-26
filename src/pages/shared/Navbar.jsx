@@ -17,7 +17,7 @@ const NavBar = () => {
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/update-profile">All Glary</NavLink></li>
+        <li><NavLink to="/update-profile">All Gallery</NavLink></li>
         <li><NavLink to="/purchase-history">Added Craft Item</NavLink></li>
         <li><NavLink to="/purchase-history">My Art & Craft List</NavLink></li>
     </>
@@ -48,7 +48,10 @@ const NavBar = () => {
                         </div>
                         <button onClick={handleSignOut} className="btn btn-sm">Log Out</button>
                     </>
-                        : <Link to="/login" className="btn">Login</Link>
+                        : <div>
+                            <Link to="/login" className="btn btn-sm">Login</Link>
+                            <Link to="/register" className="btn btn-sm ml-3">Registration</Link>
+                        </div>
                 }
             </div>
         </div>
