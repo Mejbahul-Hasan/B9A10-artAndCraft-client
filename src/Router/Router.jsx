@@ -3,7 +3,11 @@ import Root from "../layout/Root";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
 import LoginPage from "../pages/LoginPage/LoginPage";
-import RegisterPage from "../pages/RegisterPager/Registerpage";
+import RegisterPage from "../pages/RegisterPager/RegisterPage";
+import AllArtItems from "../pages/AllArt&Craft/AllArtItems";
+import AddCraftItem from "../pages/AddCraftItem/AddCraftItem";
+import MyCraftItem from "../pages/MyCraftItem/MyCraftItem";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +26,18 @@ const router = createBrowserRouter([
             {
               path: "/register",
               element: <RegisterPage />,
+            },
+            {
+              path: "/all-items",
+              element: <AllArtItems />,
+            },
+            {
+              path: "/add-item",
+              element: <PrivateRoute><AddCraftItem /></PrivateRoute>,
+            },
+            {
+              path: "/my-item",
+              element: <PrivateRoute><MyCraftItem /></PrivateRoute>,
             },
           ],
     },

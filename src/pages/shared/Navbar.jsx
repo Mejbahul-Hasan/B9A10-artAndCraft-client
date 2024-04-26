@@ -1,4 +1,3 @@
-
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { toast } from 'react-toastify';
@@ -17,9 +16,9 @@ const NavBar = () => {
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/update-profile">All Gallery</NavLink></li>
-        <li><NavLink to="/purchase-history">Added Craft Item</NavLink></li>
-        <li><NavLink to="/purchase-history">My Art & Craft List</NavLink></li>
+        <li><NavLink to="/all-items">All Art & Craft Items</NavLink></li>
+        <li><NavLink to="/add-item">Add Craft Item</NavLink></li>
+        <li><NavLink to="/my-item">My Art & Craft List</NavLink></li>
     </>
 
     return (
