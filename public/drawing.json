@@ -1,0 +1,68 @@
+[
+    {
+        "image": "https://i.ibb.co/PZkXsRd/1-catherine-kay-greenup-vu-Ox-Jjt-BBx-U-unsplash.jpg",
+        "item_name": "Majestic Mountain",
+        "subcategory_name": "Landscape Painting",
+        "short_description": "A captivating portrayal of a towering mountain range, evoking a sense of awe and adventure. Perfect for nature enthusiasts seeking inspiration.",
+        "price": 250,
+        "rating": "Good",
+        "customization_example": "yes",
+        "processing_time": "1-2 weeks",
+        "stock_status": "In stock"
+    },
+    {
+        "image": "https://i.ibb.co/Sy0j2j1/2-diogo-nunes-Wa9il-X9-XYOI-unsplash.jpg",
+        "item_name": "Expressions of Soul",
+        "subcategory_name": "Portrait Drawing",
+        "short_description": "Each stroke reveals the depth of emotion, delicately crafted to express the soul of the portrayed individual.",
+        "price": 200,
+        "rating": "Good",
+        "customization_example": "no",
+        "processing_time": "2-3 days",
+        "stock_status": "In stock"
+    },
+    {
+        "image": "https://i.ibb.co/KKsRkZD/3-birmingham-museums-trust-HEEv-Yh-Nzp-Eo-unsplash.jpg",
+        "item_name": "Vibrant Blossoms",
+        "subcategory_name": "Watercolour Painting",
+        "short_description": "Bold and vibrant blossoms leap from the canvas, infusing any space with the energy and joy of nature's colors.",
+        "price": 180,
+        "rating": "Good",
+        "customization_example": "no",
+        "processing_time": "2-3 days",
+        "stock_status": "In stock"
+    },
+    {
+        "image": "https://i.ibb.co/BqwBt0P/4-lucas-k-w-QLAGv4-OYs-unsplash.jpg",
+        "item_name": "Harmony in Chaos",
+        "subcategory_name": "Oil Painting",
+        "short_description": "Organized chaos takes form in this abstract masterpiece, balancing vibrant energy with a sense of harmony and order.",
+        "price": 280,
+        "rating": "Good",
+        "customization_example": "yes",
+        "processing_time": "3-4 weeks",
+        "stock_status": "Made to Order"
+    },
+    {
+        "image": "https://i.ibb.co/KyNfqf0/5-birmingham-museums-trust-g-Hkgq-Zh-HPb-M-unsplash.jpg",
+        "item_name": "Gentle Contours",
+        "subcategory_name": "Charcoal Sketching",
+        "short_description": "Graceful lines and delicate shading converge to portray the human form with understated elegance.",
+        "price": 150,
+        "rating": "Good",
+        "customization_example": "yes",
+        "processing_time": "1-2 weeks",
+        "stock_status": "In stock"
+    },
+    {
+        "image": "https://i.ibb.co/g6bp7kM/6-erik-mclean-8-Se-JUmfahu0-unsplash.jpg",
+        "item_name": "Comic Book Heroes",
+        "subcategory_name": "Cartoon Drawing",
+        "short_description": "Bring your favorite comic book heroes to life with these dynamic and action-packed cartoon drawings.",
+        "price": 70,
+        "rating": "Good",
+        "customization_example": "no",
+        "processing_time": "2-3 days",
+        "stock_status": "In stock"
+    }
+]

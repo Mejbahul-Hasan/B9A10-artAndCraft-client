@@ -1,7 +1,7 @@
 
 const AddCraftItem = () => {
 
-    const handleAddItem = e =>{
+    const handleAddItem = e => {
         e.preventDefault();
         const form = e.target;
         const item_name = form.item_name.value;
@@ -13,7 +13,21 @@ const AddCraftItem = () => {
         const price = form.price.value;
         const processing_time = form.processing_time.value;
         const image = form.image.value;
-        console.log(item_name, description, subcategory_name, customization, rating, stockStatus, price, processing_time, image);
+        const addItem = { item_name, description, subcategory_name, customization, rating, stockStatus, price, processing_time, image };
+        console.log(addItem);
+
+        fetch('http://localhost:5000/items', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(addItem),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                
+            })
     }
 
     return (
@@ -32,7 +46,7 @@ const AddCraftItem = () => {
                         </label>
                     </div>
                     <div className="lg:flex gap-5">
-                        <select name="subcategory_name" class="select select-bordered join-item md:w-1/2 m-5">
+                        <select name="subcategory_name" className="select select-bordered join-item md:w-1/2 m-5">
                             <option disabled selected>Subcategory Name</option>
                             <option>Landscape Painting</option>
                             <option>Portrait Drawing</option>
@@ -41,20 +55,20 @@ const AddCraftItem = () => {
                             <option>Charcoal Sketching</option>
                             <option>Cartoon Drawing</option>
                         </select>
-                        <select name="customization" class="select select-bordered join-item md:w-1/2 m-5">
+                        <select name="customization" className="select select-bordered join-item md:w-1/2 m-5">
                             <option disabled selected>Customization</option>
                             <option>Yes</option>
                             <option>No</option>
                         </select>
                     </div>
                     <div className="lg:flex gap-5">
-                        <select name="rating" class="select select-bordered join-item md:w-1/2 m-5">
+                        <select name="rating" className="select select-bordered join-item md:w-1/2 m-5">
                             <option disabled selected>Rating</option>
                             <option>Good</option>
                             <option>Average</option>
                             <option>Bad</option>
                         </select>
-                        <select name="stockStatus" class="select select-bordered join-item md:w-1/2 m-5">
+                        <select name="stockStatus" className="select select-bordered join-item md:w-1/2 m-5">
                             <option disabled selected>Stock Status</option>
                             <option>In Stock</option>
                             <option>Made to Order</option>
