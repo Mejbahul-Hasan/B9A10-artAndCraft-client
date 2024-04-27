@@ -8,6 +8,7 @@ import AllArtItems from "../pages/AllArt&Craft/AllArtItems";
 import AddCraftItem from "../pages/AddCraftItem/AddCraftItem";
 import MyCraftItem from "../pages/MyCraftItem/MyCraftItem";
 import PrivateRoute from "./PrivateRoute";
+import ViewDetails from "../pages/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
             {
               path: "/all-items",
               element: <AllArtItems />,
+              loader: ()=> fetch('http://localhost:5000/items')
             },
             {
               path: "/add-item",
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
             {
               path: "/my-item",
               element: <PrivateRoute><MyCraftItem /></PrivateRoute>,
+            },
+            {
+              path: "/view-details",
+              element: <PrivateRoute><ViewDetails /></PrivateRoute>,
             },
           ],
     },
