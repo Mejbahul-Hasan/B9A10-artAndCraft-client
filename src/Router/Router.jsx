@@ -19,6 +19,7 @@ const router = createBrowserRouter([
             {
               path: "/",
               element: <Home />,
+              loader: ()=> fetch('http://localhost:5000/items')
             },
             {
               path: "/login",
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
             {
               path: "/my-item",
               element: <PrivateRoute><MyCraftItem /></PrivateRoute>,
+              loader: ({params})=> fetch(`http://localhost:5000/items-email/${params.email}`)
             },
             {
               path: "/view-details/:id",
