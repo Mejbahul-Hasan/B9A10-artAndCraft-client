@@ -5,6 +5,8 @@ const AddCraftItem = () => {
     const handleAddItem = e => {
         e.preventDefault();
         const form = e.target;
+        const user_name = form.user_name.value;
+        const email = form.email.value;
         const item_name = form.item_name.value;
         const description = form.description.value;
         const subcategory_name = form.subcategory_name.value;
@@ -14,7 +16,7 @@ const AddCraftItem = () => {
         const price = form.price.value;
         const processing_time = form.processing_time.value;
         const image = form.image.value;
-        const addItem = { item_name, description, subcategory_name, customization, rating, stockStatus, price, processing_time, image };
+        const addItem = { user_name, email, item_name, description, subcategory_name, customization, rating, stockStatus, price, processing_time, image };
         console.log(addItem);
 
         fetch('http://localhost:5000/items', {
@@ -27,13 +29,13 @@ const AddCraftItem = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
                         text: 'Your Item added successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
-                      })
+                    })
                 }
 
             })
@@ -44,6 +46,16 @@ const AddCraftItem = () => {
             <h1 className="text-3xl py-5">Please fill-up the following form:</h1>
             <form onSubmit={handleAddItem}>
                 <div className="">
+                    <div className="lg:flex gap-5">
+                        <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
+                            User
+                            <input type="text" name="user_name" className="grow w-full" placeholder="User Name" />
+                        </label>
+                        <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
+                            Email
+                            <input type="text" name="email" className="grow w-full" placeholder="Put your email address" />
+                        </label>
+                    </div>
                     <div className="lg:flex gap-5">
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
                             Name
@@ -99,7 +111,7 @@ const AddCraftItem = () => {
                             <input type="text" name="image" className="grow w-full" placeholder="Image URL" />
                         </label>
                     </div>
-                    <button className="btn btn-primary w-1/2 my-5">Submit</button>
+                    <button className="btn btn-primary w-1/2 my-5">Add</button>
                 </div>
             </form>
         </div>

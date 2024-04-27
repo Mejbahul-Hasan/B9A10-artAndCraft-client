@@ -46,7 +46,7 @@ const AllArtItems = () => {
                                 <td>{item.rating}</td>
                                 <td>{item.price}</td>
                                 <th>
-                                    <Link to="/view-details/&{item._id}"><button className="btn btn-xs">View Details</button></Link>
+                                    <Link to={`/view-details/${item._id}`}><button className="btn btn-xs">View Details</button></Link>
                                 </th>
                             </tr>)
                         }
