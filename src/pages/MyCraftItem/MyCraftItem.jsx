@@ -37,7 +37,7 @@ const MyCraftItem = () => {
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "Your item has been deleted.",
                                 icon: "success"
                             });
                         }
@@ -65,7 +65,7 @@ const MyCraftItem = () => {
                             </div>
                             <p>{item.description}</p>
                             <div className="flex gap-5 justify-center">
-                                <Link to={"/update"}><button className="btn btn-secondary btn-sm">Update</button></Link>
+                                <Link to={`/update/${item._id}`}><button className="btn btn-secondary btn-sm">Update</button></Link>
                                 <button onClick={() => handleDelete(item._id)} className="btn btn-secondary btn-sm">Delete</button>
                             </div>
                         </div>

@@ -1,5 +1,9 @@
+import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const UpdatePage = () => {
+    const updatedItem = useLoaderData();
+    const { _id } = updatedItem;
 
     const handleUpdateItem = e => {
         e.preventDefault();
@@ -15,8 +19,29 @@ const UpdatePage = () => {
         const image = form.image.value;
         const updateItem = { item_name, description, subcategory_name, customization, rating, stockStatus, price, processing_time, image };
         console.log(updateItem);
+
+        fetch(`http://localhost:5000/items/${_id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updateItem),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount>0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your Item updated successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+
+            })
     }
-    
+
     return (
         <div className="bg-gray-200 rounded-2xl text-center max-w-6xl mx-auto">
             <h1 className="text-3xl py-5">Please fill-up the form to update your information:</h1>

@@ -44,8 +44,9 @@ const router = createBrowserRouter([
               element: <PrivateRoute><MyCraftItem /></PrivateRoute>,
             },
             {
-              path: "/update",
+              path: "/update/:id",
               element: <PrivateRoute><UpdatePage /></PrivateRoute>,
+              loader: ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
             },
             {
               path: "/view-details/:id",
