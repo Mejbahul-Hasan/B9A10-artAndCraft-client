@@ -18,17 +18,17 @@ const Home = () => {
                 {
                     cardItems.map(item =>
                         <div key={item._id} className="card w-96 bg-base-100 shadow-xl">
-                            <figure><img src={item.image} alt="artAndCraft" /></figure>
+                            <figure><img src={item?.image} alt="artAndCraft" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">
-                                    {item.item_name}
-                                    <div className="badge badge-secondary">${item.price}</div>
+                                    {item?.item_name}
+                                    <div className="badge badge-secondary">${item?.price}</div>
                                 </h2>
                                 <div className="card-actions">
-                                    <div className="badge badge-outline">{item.subcategory_name}</div>
-                                    <div className="badge badge-outline"><FcRating />{item.rating}</div>
+                                    <div className="badge badge-outline">{item?.subcategory_name}</div>
+                                    <div className="badge badge-outline"><FcRating />{item?.rating}</div>
                                 </div>
-                                <p>{item.description}</p>
+                                <p>{item?.description}</p>
                                 <Link to={`/view-details/${item._id}`}><button className="btn btn-sm w-full">View Details</button></Link>
                             </div>
                         </div>)

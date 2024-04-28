@@ -29,22 +29,22 @@ const AllArtItems = () => {
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
-                                                <img src={item.image} alt="Avatar Tailwind CSS Component" />
+                                                <img src={item?.image} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                         <div>
-                                            <div className="font-bold">{item.item_name}</div>
+                                            <div className="font-bold">{item?.item_name}</div>
                                             <div className="text-sm opacity-50"></div>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    {item.subcategory_name}
+                                    {item?.subcategory_name}
                                     <br />
-                                    <span className="badge badge-ghost badge-sm">Stock Status: {item.stockStatus}</span>
+                                    <span className="badge badge-ghost badge-sm">Stock Status: {item?.stockStatus}</span>
                                 </td>
-                                <td>{item.rating}</td>
-                                <td>{item.price}</td>
+                                <td>{item?.rating}</td>
+                                <td>{item?.price}</td>
                                 <th>
                                     <Link to={`/view-details/${item._id}`}><button className="btn btn-xs">View Details</button></Link>
                                 </th>

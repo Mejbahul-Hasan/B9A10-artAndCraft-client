@@ -18,6 +18,7 @@ const AddCraftItem = () => {
         const image = form.image.value;
         const addItem = { user_name, email, item_name, description, subcategory_name, customization, rating, stockStatus, price, processing_time, image };
         console.log(addItem);
+        form.reset();
 
         fetch('http://localhost:5000/items', {
             method: "POST",
