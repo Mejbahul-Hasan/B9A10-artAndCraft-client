@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <>
             <div className="my-5">
-            <Slider />
+                <Slider />
             </div>
             <div>
                 <h1>Total Data: {cardItems.length}</h1>

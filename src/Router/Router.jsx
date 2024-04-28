@@ -9,6 +9,7 @@ import AddCraftItem from "../pages/AddCraftItem/AddCraftItem";
 import MyCraftItem from "../pages/MyCraftItem/MyCraftItem";
 import PrivateRoute from "./PrivateRoute";
 import ViewDetails from "../pages/ViewDetails/ViewDetails";
+import UpdatePage from "../components/UpdatePage";
 
 const router = createBrowserRouter([
     {
@@ -41,7 +42,10 @@ const router = createBrowserRouter([
             {
               path: "/my-item",
               element: <PrivateRoute><MyCraftItem /></PrivateRoute>,
-              loader: ({params})=> fetch(`http://localhost:5000/items-email/${params.email}`)
+            },
+            {
+              path: "/update",
+              element: <PrivateRoute><UpdatePage /></PrivateRoute>,
             },
             {
               path: "/view-details/:id",
