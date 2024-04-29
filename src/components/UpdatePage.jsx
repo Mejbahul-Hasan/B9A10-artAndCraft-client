@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 
 const UpdatePage = () => {
     const updatedItem = useLoaderData();
-    const { _id } = updatedItem;
+    const { _id, item_name, description, price, processing_time, image, subcategory_name, customization, stockStatus, rating } = updatedItem;
 
     const handleUpdateItem = e => {
         e.preventDefault();
@@ -45,21 +45,21 @@ const UpdatePage = () => {
 
     return (
         <div className="bg-gray-200 rounded-2xl text-center max-w-6xl mx-auto">
-            <h1 className="text-3xl py-5">Please fill-up the form to update your information:</h1>
+            <h1 className="text-3xl py-5">Please Update Your Information:</h1>
             <form onSubmit={handleUpdateItem}>
-                <div className="">
+                <div>
                     <div className="lg:flex gap-5">
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            Name
-                            <input type="text" name="item_name" className="grow w-full" placeholder="Name of your Art/Craft" />
+                            Name:
+                            <input type="text" name="item_name" className="grow w-full" defaultValue={item_name}/>
                         </label>
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            Description
-                            <input type="text" name="description" className="grow w-full" placeholder="Short Description of your item" />
+                            Description:
+                            <input type="text" name="description" className="grow w-full" defaultValue={description} />
                         </label>
                     </div>
                     <div className="lg:flex gap-5">
-                        <select name="subcategory_name" className="select select-bordered join-item md:w-1/2 m-5">
+                        <select name="subcategory_name" defaultValue={subcategory_name} className="select select-bordered join-item md:w-1/2 m-5">
                             <option disabled selected>Subcategory Name</option>
                             <option>Landscape Painting</option>
                             <option>Portrait Drawing</option>
@@ -68,20 +68,20 @@ const UpdatePage = () => {
                             <option>Charcoal Sketching</option>
                             <option>Cartoon Drawing</option>
                         </select>
-                        <select name="customization" className="select select-bordered join-item md:w-1/2 m-5">
+                        <select name="customization" defaultValue={customization} className="select select-bordered join-item md:w-1/2 m-5">
                             <option disabled selected>Customization</option>
                             <option>Yes</option>
                             <option>No</option>
                         </select>
                     </div>
                     <div className="lg:flex gap-5">
-                        <select name="rating" className="select select-bordered join-item md:w-1/2 m-5">
+                        <select name="rating" defaultValue={rating} className="select select-bordered join-item md:w-1/2 m-5">
                             <option disabled selected>Rating</option>
                             <option>Good</option>
                             <option>Average</option>
                             <option>Bad</option>
                         </select>
-                        <select name="stockStatus" className="select select-bordered join-item md:w-1/2 m-5">
+                        <select name="stockStatus" defaultValue={stockStatus} className="select select-bordered join-item md:w-1/2 m-5">
                             <option disabled selected>Stock Status</option>
                             <option>In Stock</option>
                             <option>Made to Order</option>
@@ -89,18 +89,18 @@ const UpdatePage = () => {
                     </div>
                     <div className="lg:flex gap-5">
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            Price
-                            <input type="text" name="price" className="grow w-full" placeholder="Amount in USD" />
+                            Price:
+                            <input type="text" name="price" className="grow w-full" defaultValue={price}/>
                         </label>
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            Time
-                            <input type="text" name="processing_time" className="grow w-full" placeholder="Processing time of the Item" />
+                            Time:
+                            <input type="text" name="processing_time" className="grow w-full" defaultValue={processing_time} />
                         </label>
                     </div>
                     <div className="gap-5 pr-10">
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-full">
-                            Image
-                            <input type="text" name="image" className="grow w-full" placeholder="Image URL" />
+                            Image:
+                            <input type="text" name="image" className="grow w-full" defaultValue={image} />
                         </label>
                     </div>
                     <button className="btn btn-primary w-1/2 my-5">Update</button>

@@ -20,7 +20,7 @@ const AddCraftItem = () => {
         console.log(addItem);
         form.reset();
 
-        fetch('https://art-and-craft-server-eight.vercel.app/items/items', {
+        fetch('https://art-and-craft-server-eight.vercel.app/items', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const AddCraftItem = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Your Item added successfully',
+                        text: 'Your item added successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
@@ -49,21 +49,21 @@ const AddCraftItem = () => {
                 <div className="">
                     <div className="lg:flex gap-5">
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            User
+                            User:
                             <input type="text" name="user_name" className="grow w-full" placeholder="User Name" />
                         </label>
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            Email
+                            Email:
                             <input type="text" name="email" className="grow w-full" placeholder="Put your email address" />
                         </label>
                     </div>
                     <div className="lg:flex gap-5">
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            Name
+                            Name:
                             <input type="text" name="item_name" className="grow w-full" placeholder="Name of your Art/Craft" />
                         </label>
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            Description
+                            Description:
                             <input type="text" name="description" className="grow w-full" placeholder="Short Description of your item" />
                         </label>
                     </div>
@@ -98,17 +98,17 @@ const AddCraftItem = () => {
                     </div>
                     <div className="lg:flex gap-5">
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            Price
+                            Price:
                             <input type="text" name="price" className="grow w-full" placeholder="Amount in USD" />
                         </label>
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
-                            Time
+                            Time:
                             <input type="text" name="processing_time" className="grow w-full" placeholder="Processing time of the Item" />
                         </label>
                     </div>
                     <div className="gap-5 pr-10">
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-full">
-                            Image
+                            Image:
                             <input type="text" name="image" className="grow w-full" placeholder="Image URL" />
                         </label>
                     </div>
