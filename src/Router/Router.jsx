@@ -12,49 +12,49 @@ import ViewDetails from "../pages/ViewDetails/ViewDetails";
 import UpdatePage from "../components/UpdatePage";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Root />,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-              path: "/",
-              element: <Home />,
-              loader: ()=> fetch('http://localhost:5000/items')
-            },
-            {
-              path: "/login",
-              element: <LoginPage />,
-            },
-            {
-              path: "/register",
-              element: <RegisterPage />,
-            },
-            {
-              path: "/all-items",
-              element: <AllArtItems />,
-              loader: ()=> fetch('http://localhost:5000/items')
-            },
-            {
-              path: "/add-item",
-              element: <PrivateRoute><AddCraftItem /></PrivateRoute>,
-            },
-            {
-              path: "/my-item",
-              element: <PrivateRoute><MyCraftItem /></PrivateRoute>,
-            },
-            {
-              path: "/update/:id",
-              element: <PrivateRoute><UpdatePage /></PrivateRoute>,
-              loader: ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
-            },
-            {
-              path: "/view-details/:id",
-              element: <PrivateRoute><ViewDetails /></PrivateRoute>,
-              loader: ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
-            },
-          ],
-    },
+  {
+      path: "/",
+      element: <Root />,
+      errorElement: <ErrorPage />,
+      children: [
+          {
+            path: "/",
+            element: <Home />,
+            loader: ()=> fetch('https://art-and-craft-server-eight.vercel.app/items')
+          },
+          {
+            path: "/login",
+            element: <LoginPage />,
+          },
+          {
+            path: "/register",
+            element: <RegisterPage />,
+          },
+          {
+            path: "/all-items",
+            element: <AllArtItems />,
+            loader: ()=> fetch('https://art-and-craft-server-eight.vercel.app/items')
+          },
+          {
+            path: "/add-item",
+            element: <PrivateRoute><AddCraftItem /></PrivateRoute>,
+          },
+          {
+            path: "/my-item",
+            element: <PrivateRoute><MyCraftItem /></PrivateRoute>,
+          },
+          {
+            path: "/update/:id",
+            element: <PrivateRoute><UpdatePage /></PrivateRoute>,
+            loader: ({params})=> fetch(`https://art-and-craft-server-eight.vercel.app/items/${params.id}`)
+          },
+          {
+            path: "/view-details/:id",
+            element: <PrivateRoute><ViewDetails /></PrivateRoute>,
+            loader: ({params})=> fetch(`https://art-and-craft-server-eight.vercel.app/items/${params.id}`)
+          },
+        ],
+  },
 ]);
 
 export default router;

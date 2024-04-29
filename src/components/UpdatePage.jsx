@@ -19,8 +19,9 @@ const UpdatePage = () => {
         const image = form.image.value;
         const updateItem = { item_name, description, subcategory_name, customization, rating, stockStatus, price, processing_time, image };
         console.log(updateItem);
+        form.reset();
 
-        fetch(`http://localhost:5000/items/${_id}`, {
+        fetch(`https://art-and-craft-server-eight.vercel.app/items/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

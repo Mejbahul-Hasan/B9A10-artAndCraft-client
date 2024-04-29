@@ -20,7 +20,7 @@ const AddCraftItem = () => {
         console.log(addItem);
         form.reset();
 
-        fetch('http://localhost:5000/items', {
+        fetch('https://art-and-craft-server-eight.vercel.app/items/items', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

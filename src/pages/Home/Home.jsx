@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FcRating } from "react-icons/fc";
 import Slider from "../../components/Slider";
+import TwoSection from "../../components/TwoSection";
 
 const Home = () => {
 
@@ -33,6 +34,9 @@ const Home = () => {
                             </div>
                         </div>)
                 }
+            </div>
+            <div>
+                <TwoSection/>
             </div>
         </>
     );

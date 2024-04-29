@@ -5,15 +5,16 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 const MyCraftItem = () => {
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext) || {};
     const [myItem, setMyItem] = useState([]);
+    const [control, setControl] = useState(false);
     // console.log(user?.email);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/items-email/${user?.email}`)
+        fetch(`https://art-and-craft-server-eight.vercel.app/items-email/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyItem(data))
-    }, [user])
+    }, [user, control])
     // console.log(myItem)
 
     const handleDelete = (id) => {
@@ -28,7 +29,7 @@ const MyCraftItem = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/items/${id}`, {
+                fetch(`https://art-and-craft-server-eight.vercel.app/items/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -40,6 +41,7 @@ const MyCraftItem = () => {
                                 text: "Your item has been deleted.",
                                 icon: "success"
                             });
+                            setControl(!control)
                         }
                     })
 
