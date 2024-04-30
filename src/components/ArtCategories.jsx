@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const ArtCategories = () => {
 
     const [newItems, setNewItems] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/newItems')
+        fetch('https://art-and-craft-server-eight.vercel.app/newItems')
             .then(res => res.json())
             .then(data => {
                 setNewItems(data)
@@ -19,7 +20,7 @@ const ArtCategories = () => {
             <div className="lg:grid lg:grid-cols-3 gap-10 my-5">
                 {
                     newItems.map(item =>
-                        <Link key={item._id} to={`/subcategory-card/${item?.subcategory_name}`}>
+                        <Link key={item._id} to={`/subcategory-card/${item._id}`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src={item?.image} alt="Craft" /></figure>
                                 <div className="card-body">
