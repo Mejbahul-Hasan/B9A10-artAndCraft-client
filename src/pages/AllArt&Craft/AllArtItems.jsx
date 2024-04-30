@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
-import { Bounce, Fade } from "react-awesome-reveal";
+import { Bounce } from "react-awesome-reveal";
 
 const AllArtItems = () => {
 

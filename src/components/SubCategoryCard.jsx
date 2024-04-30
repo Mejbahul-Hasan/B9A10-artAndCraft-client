@@ -1,27 +1,30 @@
 import { Link, useLoaderData } from "react-router-dom";
-
+import { FcRating } from "react-icons/fc";
 
 const SubCategoryCard = () => {
 
     const categoryData = useLoaderData();
+    const { _id, item_name, description, price, processing_time, image, subcategory_name, rating } = categoryData;
 
     return (
         <>
-            <h1>This page is under construction</h1>
             <div className="lg:grid lg:grid-cols-3 gap-10 my-5">
-                {/* {
-                    categoryData.map(item=>
-                        <div key={item._id} className="card card-compact w-96 bg-base-100 shadow-xl">
-                        <figure><img src={item.image} alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
+                <div className="card w-96 bg-base-100 shadow-xl">
+                    <figure><img src={image} alt="artAndCraft" /></figure>
+                    <div className="card-body">
+                        <h2 className="card-title">
+                            {item_name}
+                            <div className="badge badge-secondary">${price}</div>
+                        </h2>
+                        <div className="card-actions">
+                            <div className="badge badge-outline">{subcategory_name}</div>
+                            <div className="badge badge-outline"><FcRating />{rating}</div>
                         </div>
-                    </div>)
-                } */}
+                        <p>{description}</p>
+                        <div className="badge badge-outline">Processing Time:{processing_time}</div>
+                        <Link to={`/subcategory-details/${_id}`}><button className="btn btn-sm w-full">View Details</button></Link>
+                    </div>
+                </div>
             </div>
         </>
     );

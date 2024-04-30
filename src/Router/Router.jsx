@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import ViewDetails from "../pages/ViewDetails/ViewDetails";
 import UpdatePage from "../components/UpdatePage";
 import SubCategoryCard from "../components/SubCategoryCard";
+import CategoryDetails from "../components/CategoryDetails";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
           {
             path: "/subcategory-card/:id",
             element: <SubCategoryCard/>,
+            loader: ({params})=> fetch(`https://art-and-craft-server-eight.vercel.app/newItems/${params.id}`)
+          },
+          {
+            path: "/subcategory-details/:id",
+            element: <CategoryDetails/>,
             loader: ({params})=> fetch(`https://art-and-craft-server-eight.vercel.app/newItems/${params.id}`)
           },
         ],
