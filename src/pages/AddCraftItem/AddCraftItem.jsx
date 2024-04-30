@@ -54,7 +54,7 @@ const AddCraftItem = () => {
                         </label>
                         <label className="input input-bordered flex items-center gap-2 m-5 md:w-1/2">
                             Email:
-                            <input type="text" name="email" className="grow w-full" placeholder="Put your email address" />
+                            <input type="email" name="email" className="grow w-full" placeholder="Put your email address" />
                         </label>
                     </div>
                     <div className="lg:flex gap-5">

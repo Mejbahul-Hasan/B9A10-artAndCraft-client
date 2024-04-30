@@ -3,18 +3,36 @@ import { FcRating } from "react-icons/fc";
 import Slider from "../../components/Slider";
 import TwoSection from "../../components/TwoSection";
 import ArtCategories from "../../components/ArtCategories";
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 const Home = () => {
 
     const cardItems = useLoaderData();
+
+    const [text] = useTypewriter({
+        words: ['Craft Items', 'Section!'],
+        loop: 10,
+        onLoopDone: () => console.log(`loop completed after 3 runs.`)
+    })
+    const [text_2] = useTypewriter({
+        words: ['Art & Craft', 'Categories', 'Section!'],
+        loop: 10,
+        onLoopDone: () => console.log(`loop completed after 3 runs.`)
+    })
+    const [text_3] = useTypewriter({
+        words: ['Two Extra', 'Sections!'],
+        loop: 10,
+        onLoopDone: () => console.log(`loop completed after 3 runs.`)
+    })
 
     return (
         <>
             <div className="my-5">
                 <Slider />
             </div>
-            <div className="bg-purple-100 h-20 rounded-xl text-center">
-                <h1 className="py-5 text-2xl font-bold">Discover the joy of expressing yourself through Art & Craft</h1>
+            <div className="bg-purple-100 h-20 rounded-xl text-center py-5">
+                <span className="text-2xl font-bold">{text}</span>
+                <Cursor cursorColor='red' />
             </div>
             <div className="lg:grid lg:grid-cols-3 gap-10 my-5">
                 {
@@ -37,12 +55,14 @@ const Home = () => {
                 }
             </div>
             <div>
-                <div className="bg-purple-100 h-20 rounded-xl text-center my-5">
-                    <h1 className="py-5 text-2xl font-bold">Unleash your inner artist with our inspiring Art & Craft</h1>
+                <div className="bg-purple-100 h-20 rounded-xl text-center py-5">
+                    <span className="text-2xl font-bold">{text_2}</span>
+                    <Cursor cursorColor='red' />
                 </div>
                 <ArtCategories />
-                <div className="bg-purple-100 h-20 rounded-xl text-center my-5">
-                    <h1 className="py-5 text-2xl font-bold">Dive into a world where every creation tells a unique story</h1>
+                <div className="bg-purple-100 h-20 rounded-xl text-center py-5">
+                    <span className="text-2xl font-bold">{text_3}</span>
+                    <Cursor cursorColor='red' />
                 </div>
                 <TwoSection />
             </div>

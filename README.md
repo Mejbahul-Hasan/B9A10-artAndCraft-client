@@ -11,3 +11,6 @@
 - **Virtual Workshops:** Participate in live virtual workshops led by industry professionals, where you can learn new skills, ask questions, and interact with instructors in real-time.
 - **Art Supplies Marketplace:** Browse a diverse selection of high-quality art supplies, from paints and brushes to sketchbooks and easels, conveniently available for purchase to support your artistic journey.
 
+**npm package used in this project:** 
+React-simple-typewriter
+React-Awesome reveal

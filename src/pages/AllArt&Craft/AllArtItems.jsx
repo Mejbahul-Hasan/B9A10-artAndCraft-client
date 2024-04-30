@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { Bounce, Fade } from "react-awesome-reveal";
 
 const AllArtItems = () => {
 
@@ -7,7 +8,9 @@ const AllArtItems = () => {
     return (
         <>
             <div className="text-center font-bold text-xl my-5">
-                <h1>Total Number of Art & Craft Items: {allArtItems.length}</h1>
+                <Bounce>
+                    <h1>Awesome collection of Art & Craft Items: {allArtItems.length}</h1>
+                </Bounce>
             </div>
             <div className="overflow-x-auto">
                 <table className="table">
